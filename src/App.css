@@ -10,7 +10,6 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: monospace;
 }
 
 .navBar {
@@ -27,8 +26,7 @@ body,
 }
 
 .navBar a:hover {
-  color: darkorange;
-  cursor: pointer;
+  color: darkorange
 }
 
 .badge {
@@ -77,6 +75,44 @@ body,
   width: max-content;
   align-self: center;
   padding: .25rem;
+  margin: .5rem;
+  border-radius: .5rem;
+  border: none;
+  text-decoration: none;
+}
+
+.itemDetail {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 2rem;
+}
+
+.itemDetail>div {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 1rem;
+}
+
+.itemDetail>div>img {
+  object-fit: contain;
+  max-height: 500px;
+}
+
+.itemCount {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 1rem;
+}
+
+.itemCount>button {
+  background-color: antiquewhite;
+  color: brown;
+  width: max-content;
+  align-self: center;
+  padding: 1rem;
   margin: .5rem;
   border-radius: .5rem;
   border: none;
