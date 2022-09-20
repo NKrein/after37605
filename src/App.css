@@ -124,3 +124,25 @@ footer {
   background-color: antiquewhite;
   text-align: center;
 }
+
+.CartItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: antiquewhite;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.CartItem h3 {
+  width: 40%;
+  text-overflow: ellipsis;
+}
+
+.CartContainer {
+  display: flex;
+  flex-direction: column;
+}

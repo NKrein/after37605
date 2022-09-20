@@ -6,11 +6,8 @@ import Loader from "./Loader";
 
 const ItemDetailContainer = () => {
 
-  const { addToCart } = useContext(cartContext);
-
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
-  const [added, setAdded] = useState(false);
 
   // const itemId = 1;
   const { itemId } = useParams();
@@ -30,15 +27,9 @@ const ItemDetailContainer = () => {
       .finally(() => setLoading(false))
   }, [itemId]);
 
-  const onAdd = (count) => {
-    console.log(`Agregaste ${product.title}, cantidad: ${count}.`);
-    addToCart(product, count);
-    setAdded(true); // seteo en tru cuando es agregado el producto
-  }
-
   return (
     <>
-      {loading ? <Loader /> : <ItemDetail onAdd={onAdd} product={product} added={added} />}
+      {loading ? <Loader /> : <ItemDetail product={product} />}
     </>
   );
 }

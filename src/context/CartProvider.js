@@ -12,7 +12,11 @@ const CartProvider = ({ children }) => {
       cart[indexItem].count = cart[indexItem].count + count;
       setCart([...cart]);
     } else {
-      setCart([...cart, { item: product, count }])
+      const newProduct = {
+        item: product,
+        count
+      }
+      setCart([...cart, newProduct])
     }
   }
 
@@ -29,8 +33,26 @@ const CartProvider = ({ children }) => {
     setCart([])
   }
 
+  const totalProductsQty = () => {
+    return cart.reduce((acc, itemCart) => acc + itemCart.count, 0)
+  }
+
+  const totalProductsPrice = () => {
+    return cart.reduce((acc, itemCart) => acc + (itemCart.item.price * itemCart.count), 0)
+  }
+
+  const value = { 
+    cart, 
+    addToCart, 
+    deleteItem, 
+    clearCart,
+    isInCart,
+    totalProductsQty,
+    totalProductsPrice
+  }
+
   return (
-    <cartContext.Provider value={{ cart, addToCart, deleteItem, clearCart }}>
+    <cartContext.Provider value={value}>
       {children}
     </cartContext.Provider>
   )

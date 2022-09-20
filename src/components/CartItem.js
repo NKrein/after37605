@@ -6,10 +6,11 @@ const CartItem = ({ prod }) => {
   const { deleteItem } = useContext(cartContext);
 
   return (
-      <div>
+      <div className='CartItem'>
         <h3>{prod.item.title}</h3>
         <p>quantity: {prod.count}</p> 
-        <button onClick={() => deleteItem(prod.item.id)}>Delete</button>
+        <p>subTotal: {prod.count * prod.item.price}</p>
+        <button className='button' onClick={() => deleteItem(prod.item.id)}>Delete</button>
       </div>
   )
 };

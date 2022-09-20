@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
+import { cartContext } from '../context/CartProvider';
 
 const CartWidget = () => {
 
+  const { totalProductsQty } = useContext(cartContext);
+
   return (
     <>
-      Cart <span className='badge'>0</span>
+      Cart {(totalProductsQty() != 0) && <span className='badge'>{totalProductsQty()}</span>}
     </>
   )
 }
